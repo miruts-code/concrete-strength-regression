@@ -5,3 +5,4 @@ __pycache__/
 # raw dataset (recreated by download_data.py)
 data/raw/*
 !data/raw/.gitkeep
+.ipynb_checkpoints/
