@@ -1,0 +1,7 @@
+numpy>=1.26
+pandas>=2.1
+# data download
+xlrd>=2.0.1
+openpyxl>=3.1
+ucimlrepo>=0.0.6
+
