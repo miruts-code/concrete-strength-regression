@@ -30,9 +30,12 @@ for i, f in enumerate(C.FEATURES):
 
 x = pd.DataFrame([values])[C.FEATURES]
 st.subheader("Predicted compressive strength")
-out = []
+out, missing = [], []
 for name in available_models():
     model = load_saved_model(name)
+    if model is None:                      # metrics exist but the .joblib file does not
+        missing.append(MODELS[name].label)
+        continue
     s = load_summary(name)
     out.append({
         "model": MODELS[name].label,
@@ -40,6 +43,14 @@ for name in available_models():
         "prediction (MPa)": round(float(model.predict(x)[0]), 2),
         "test RMSE (MPa)": round(s["test"]["rmse"], 2),
     })
+
+if missing:
+    st.warning("Saved model file missing for: " + ", ".join(missing) +
+               ". Run `python run_all.py` (or `python -m models.train --all`) to recreate them.")
+if not out:
+    st.error("No saved models found in `results/saved_models/`. "
+             "Run `python run_all.py` first, then reload this page.")
+    st.stop()
 out = pd.DataFrame(out)
 best = out.sort_values("test RMSE (MPa)").iloc[0]
 st.metric(f"Best model by test RMSE: {best['model']}", f"{best['prediction (MPa)']} MPa",

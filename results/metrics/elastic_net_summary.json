@@ -1,0 +1,30 @@
+{
+  "model": "elastic_net",
+  "best_params": {
+    "degree": 3,
+    "alpha": 0.008111308307896872,
+    "l1_ratio": 0.8
+  },
+  "one_se_params": {
+    "degree": 3,
+    "alpha": 0.008111308307896872,
+    "l1_ratio": 0.8
+  },
+  "cv_rmse": 6.336879564125409,
+  "train": {
+    "rmse": 4.913006190231084,
+    "mae": 3.7614615209237283,
+    "r2": 0.905864442374017
+  },
+  "test": {
+    "rmse": 6.7205991015254005,
+    "mae": 4.800976972106227,
+    "r2": 0.8486014447159813
+  },
+  "n_features": 164,
+  "n_nonzero": 131,
+  "grid_size": 144,
+  "cv_folds": 5,
+  "seed": 42,
+  "runtime_seconds": 291.8
+}

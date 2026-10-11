@@ -1,0 +1,26 @@
+{
+  "model": "ols",
+  "best_params": {
+    "degree": 3
+  },
+  "one_se_params": {
+    "degree": 2
+  },
+  "cv_rmse": 7.1718120426546745,
+  "train": {
+    "rmse": 4.395233064038711,
+    "mae": 3.353422032553452,
+    "r2": 0.9246604719696232
+  },
+  "test": {
+    "rmse": 5.948419935549056,
+    "mae": 4.502015923437978,
+    "r2": 0.8813933627982411
+  },
+  "n_features": 164,
+  "n_nonzero": 164,
+  "grid_size": 4,
+  "cv_folds": 5,
+  "seed": 42,
+  "runtime_seconds": 9.1
+}

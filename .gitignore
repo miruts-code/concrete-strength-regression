@@ -6,3 +6,5 @@ __pycache__/
 data/raw/*
 !data/raw/.gitkeep
 .ipynb_checkpoints/
+# data/processed/ and results/ are committed on purpose,
+# so the deployed Streamlit app works straight from the repo.
